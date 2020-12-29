@@ -5,14 +5,18 @@
 {% endblock title %}
 
 {% block content %}
-    <div>
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
+    
+ 
+<form class="container text-center " style="margin-top: 5%;" action="" method="POST">
+  
+    {% csrf_token %}
+    {{ form.as_p }}
+  
+      
+  
+  <button  type="submit" class="btn btn-warning justify-content-center">ADD</button>
+</form>
 
-            <input type="submit" value="Add">
-        </form>
-    </div>
 {% endblock content %}
     
     

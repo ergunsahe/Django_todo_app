@@ -6,12 +6,15 @@
 
 
 {% block content %}
-<form action="" method="POST">
-{% csrf_token %}
-    <p>Are you sure to delete {{ todo }} ?</p>
-    <input type="submit" value="Yes">
-</form>
-    <a href="{% url 'todo-list'%}"><button>Cancel</button></a>
+<div class= "container d-flex justify-content-center" style="margin-top: 6%;">
+
+    <form action="" method="POST">
+    {% csrf_token %}
+        <p>Are you sure to delete {{ todo }} ?</p>
+        <input type="submit" value="Yes" class="btn btn-warning">
+    </form>
+        <a href="{% url 'todo-list'%}" class="align-self-end"><button class="btn btn-primary">Cancel</button></a>
+</div>
 {% endblock content %}
     
     

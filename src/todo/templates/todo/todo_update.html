@@ -6,13 +6,13 @@
 
 
 {% block content %}
-    <div style="display: flex; flex-direction: row">
+    <div class="container d-flex justify-content-center" style="margin-top: 6%;">
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Update" style="display: ;">
+            <input type="submit" value="Update" class="btn btn-primary">
         </form>
-        <a href="{% url 'todo-delete' todo.id%}" style="align-self: flex-end;"><button>Delete</button> </a>
+        <a href="{% url 'todo-delete' todo.id%}" style="align-self: flex-end;"><button class="btn btn-warning">Delete</button> </a>
 
     </div>
    

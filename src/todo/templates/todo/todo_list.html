@@ -7,22 +7,34 @@
 
 
 {% block content %}
-<h3>Todo List</h3>
-    <ul>
-        
-        {% for todo in todos %}
-        <a href="{% url 'todo-update' todo.id%}">
-        {% if todo.completed %}
-        <li><del>{{ todo }}</del></li>
-        {% else %}
+<div class="container d-flex flex-xl-column align-items-center " style="margin-top: 6%;">
+    
+  
+    
+    
+    <h3 class="card-title text-success">Todo List</h5>
+    {% for todo in todos %}
+    
+            
+    {% if todo.completed %}
+    <div class="list-group col-sm-6 text-center">
+         <a href="{% url 'todo-update' todo.id%}" class="list-group-item list-group-item-action list-group-item-info"><del>{{ todo }}</del></a>
+     </div>
+            
+    {% else %}
+    <div class="list-group col-sm-6 text-center">
+        <a href="{% url 'todo-update' todo.id%}" class="list-group-item list-group-item-action list-group-item-info">{{todo}}</a>
+    </div>
+              
+    {% endif %}
+            
+                
+    {% endfor %}
 
-        <li>{{todo}}</li>   
-        {% endif %}
-        </a>
+        
+    </div>
             
-        {% endfor %}
-            
-    </ul>
+    
 {% endblock content %}
     
     
